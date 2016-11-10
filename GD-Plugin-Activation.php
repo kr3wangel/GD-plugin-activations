@@ -3,7 +3,7 @@
 Plugin Name: GoDadddy Required Plugins
 Plugin URI:  
 Description: One plugin to rule them ALL. Required GoDaddy Plugins
-Version:     1.0.0
+Version:     1.0.2
 Author:      Angel Herrera (Boostability)
 Author URI:  
 License:     GPL2
@@ -42,11 +42,13 @@ function GD_register_required_plugins() {
 			'required'  => true,
 		),
 
+/*
         array(
 			'name'      => 'Google Analytics Dashboard for WP',
 			'slug'      => 'google-analytics-dashboard-for-wp',
 			'required'  => true,
 		),
+*/
 
         array(
 			'name'      => 'Ninja Forms',
@@ -88,6 +90,19 @@ function GD_register_required_plugins() {
 			'name'      => 'Widget Importer & Exporter',
 			'slug'      => 'widget-importer-exporter',
 			'required'  => true,
+		),
+		
+		// Plugins bundled with theme. 
+		array(
+			'name'      		=> 'Google Analytics Dashboard for WP',
+			'slug'      		=> 'google-analytics-dashboard-for-wp',
+			'source'             => dirname( __FILE__ ) . '/plugins/google-analytics-dashboard-for-wp.4.9.3.2.zip',
+			'required'           => true, 
+			'version'            => '', // If the plugin version is higher than the plugin version installed, the user will be notified to update the plugin.
+			'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
+			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
+			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 		),
 
 		//Extra Plugins that could be required
